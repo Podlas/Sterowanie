@@ -2,7 +2,7 @@
 # Opis projektu.
 
 Sterowanie obrotami będzie odbywać się za pomocą potencjometru a zmiana kierunku obrotów silnika za pomocą przycisku. 
-Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterownika L293D - dwukanałowego sterownika silników.
+Sterowanie silnikiem będzie odbywać się przy użyciu sterownika L293D - dwukanałowego sterownika silników.
 
 # Materiały użyte w projekcie:
 
@@ -82,3 +82,6 @@ void setMotor(int speed, boolean reverse)
   
 }
 ```
+# Film 
+Poniżej zamieszczam link do swojego dysku google, gdzie znaduję się krótki filmik przedstawiajacy działanie mojego układu.
+https://drive.google.com/file/d/1gJ4KR7MHfytIcQVDXCcUCq8jGNutqEq9/view?usp=sharing
