@@ -20,7 +20,7 @@ Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterow
 
 -Tact Switch 6x6mm .
 # Zdjęcia wykonanego układu:
-
+![nazwa](./STEROWANIE/1.jpg)
 
 
 
@@ -31,26 +31,27 @@ Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterow
 ```c
 int enablePin = 11;
 
-int in1Pin = 10;
+int in1Pin = 10; //deklaracja pinu kierunku obrotów 
 
-int in2Pin = 9;
+int in2Pin = 9; //deklaracja pinu kierunku obrotów 
 
-int switchPin = 7;
 
-int potPin = 0;
+int switchPin = 7; // deklaracja pinu przycisku
+
+int potPin = 0; // deklaracja pinu potencjometru
 
 
 void setup()
 
 {
 
-  pinMode(in1Pin, OUTPUT);
+  pinMode(in1Pin, OUTPUT); //ustawienie pinu na wyjście 
   
   pinMode(in2Pin, OUTPUT);
   
   pinMode(enablePin, OUTPUT);
   
-  pinMode(switchPin, INPUT_PULLUP);
+  pinMode(switchPin, INPUT_PULLUP); //ustawinie przycisku na wciśnięcie 
   
 }
 
@@ -58,11 +59,11 @@ void loop()
 
 {
 
-  int speed = analogRead(potPin) / 4;
+  int speed = analogRead(potPin) / 4; //odczytanie wartości obrotowej silnika z wejścia anlogowego, dzielona przez 4 ponieważ odczyt będzie z przedziału pomiędzy 0 a 1023, a na                                        wyjściu analogowym potrzebujemy zakresu od 0 do 255.
   
-  boolean reverse = digitalRead(switchPin);
+  boolean reverse = digitalRead(switchPin); //odczytanie wartości z przycisku 
   
-  setMotor(speed, reverse);
+  setMotor(speed, reverse); //załączenie silnika
   
 }
 
@@ -71,11 +72,11 @@ void setMotor(int speed, boolean reverse)
 
 {
 
-  analogWrite(enablePin, speed);
+  analogWrite(enablePin, speed); //Prędkość obrotową ustawiamy używając “analogWrite” na pinie “enable”
   
-  digitalWrite(in1Pin, ! reverse);
+  digitalWrite(in1Pin, ! reverse); //funkcja kierunku obrotów
   
-  digitalWrite(in2Pin, reverse);
+  digitalWrite(in2Pin, reverse); //funkcja kierunku obrotów
   
 }
 ```
