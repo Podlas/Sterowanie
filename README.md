@@ -20,7 +20,7 @@ Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterow
 
 -Tact Switch 6x6mm .
 # Zdjęcia wykonanego układu:
-![nazwa](./STEROWANIE/1.jpg)
+![nazwa](desktop/STEROWANIE/1.jpg)
 
 
 
@@ -29,11 +29,11 @@ Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterow
 
 
 ```c
-int enablePin = 11;
+int enablePin = 11; //pin włączający/wyłączający silnik w zależności od stanów wejść IN1 i IN2
 
-int in1Pin = 10; //deklaracja pinu kierunku obrotów 
+int in1Pin = 10; //deklaracja pinu IN1 w mostku
 
-int in2Pin = 9; //deklaracja pinu kierunku obrotów 
+int in2Pin = 9; //deklaracja pinu IN2 w mostku
 
 
 int switchPin = 7; // deklaracja pinu przycisku
@@ -51,7 +51,7 @@ void setup()
   
   pinMode(enablePin, OUTPUT);
   
-  pinMode(switchPin, INPUT_PULLUP); //ustawinie przycisku na wciśnięcie 
+  pinMode(switchPin, INPUT_PULLUP); //gdy wciśniety to silnika obraca się  zgodnie ze wskazówkami zegara gdy nie to w przeciwnym kierunku, 
   
 }
 
@@ -63,7 +63,7 @@ void loop()
   
   boolean reverse = digitalRead(switchPin); //odczytanie wartości z przycisku 
   
-  setMotor(speed, reverse); //załączenie silnika
+  setMotor(speed, reverse); //funkca załączenia silnika
   
 }
 
@@ -72,9 +72,9 @@ void setMotor(int speed, boolean reverse)
 
 {
 
-  analogWrite(enablePin, speed); //Prędkość obrotową ustawiamy używając “analogWrite” na pinie “enable”
+  analogWrite(enablePin, speed); //prędkość obrotową ustawiamy używając “analogWrite” na pinie “enable”
   
-  digitalWrite(in1Pin, ! reverse); //funkcja kierunku obrotów
+  digitalWrite(in1Pin, ! reverse); //funkcja kierunku obrotów w przeciwnym kierunku
   
   digitalWrite(in2Pin, reverse); //funkcja kierunku obrotów
   
