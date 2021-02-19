@@ -21,7 +21,9 @@ Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterow
 -Tact Switch 6x6mm .
 # Zdjęcia wykonanego układu:
 ![nazwa](./1.jpg)
-
+![nazwa](./2.jpg)
+![nazwa](./3.jpg)
+![nazwa](./4.jpg)
 
 
 
