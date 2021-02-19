@@ -20,7 +20,7 @@ Sterowanie obrotami jaki i kierunkiem będzię dobywać się przy użyciu sterow
 
 -Tact Switch 6x6mm .
 # Zdjęcia wykonanego układu:
-![nazwa](desktop/STEROWANIE/1.jpg)
+![nazwa](C:\Users\Karol\Desktop\STEROWANIE)
 
 
 
